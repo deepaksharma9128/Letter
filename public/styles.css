@@ -1,0 +1,405 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Floating Hearts */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.6;
+    animation: float 8s infinite ease-in-out;
+    color: #ff69b4;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    25% { transform: translateY(-20px) rotate(5deg); opacity: 0.8; }
+    50% { transform: translateY(-40px) rotate(-5deg); opacity: 1; }
+    75% { transform: translateY(-20px) rotate(3deg); opacity: 0.8; }
+}
+
+/* Flash Overlay */
+.flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+.flash-overlay.active {
+    opacity: 1;
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Banner Styles */
+.banner {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a6f, #f093fb, #f5576c);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
+}
+
+.banner-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Photo Container */
+.photo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Shayari Container */
+.shayari-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.shayari-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Card */
+.main-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+}
+
+/* Romantic Shayari in Card */
+.romantic-shayari {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Divider */
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
+    margin: 20px 0;
+    border-radius: 1px;
+}
+
+/* Prelude Text */
+.prelude-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    color: #e91e63;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Question Container */
+.question-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-question {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    color: #2c3e50;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 80px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 15px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 120px;
+    position: relative;
+}
+
+.btn-yes {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+    color: white;
+}
+
+.btn-yes:hover {
+    background: linear-gradient(45deg, #ff5252, #e91e63);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-no {
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-no:hover {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(116, 185, 255, 0.4);
+}
+
+/* No Button Escape Animation */
+.btn-no.escaping {
+    position: absolute !important;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Congratulations Page Styles */
+.congratulations-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hearts-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.congrats-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.congrats-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a6f, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.congrats-subtexts {
+    margin-bottom: 40px;
+}
+
+.subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.final-shayari {
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.final-shayari .shayari-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 2.3vw, 1rem);
+    line-height: 1.7;
+    color: #333;
+    text-align: center;
+}
+
+.highlight-message {
+    margin-bottom: 30px;
+}
+
+.highlight-message p {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.name-highlight {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.5)); }
+    to { filter: drop-shadow(0 0 15px rgba(255, 107, 107, 0.8)); }
+}
+
+.signature {
+    margin-top: 20px;
+}
+
+.signature p {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-style: italic;
+    color: #666;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-card {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .buttons-container {
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        min-width: 110px;
+    }
+    
+    .congrats-container {
+        margin: 20px;
+        padding: 30px 15px;
+    }
+    
+    .final-shayari {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .banner {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .main-card {
+        padding: 20px 15px;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
